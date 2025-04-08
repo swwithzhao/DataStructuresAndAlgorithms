@@ -13,11 +13,11 @@ public class BinarySearch {
         int left = 0, right = a.length - 1;
         while (left <= right) {
             int mid = (left + right) / 2;
-            if (target>a[mid]){
-                left=mid+1;
-            }else if (target<a[mid]){
-                right=mid-1;
-            }else {
+            if (target > a[mid]) {
+                left = mid + 1;
+            } else if (target < a[mid]) {
+                right = mid - 1;
+            } else {
                 return mid;
             }
         }
@@ -32,16 +32,39 @@ public class BinarySearch {
      * @return
      */
     public static int binarySearchAlternative(int[] a, int target) {
-        int left=0,right=a.length;
-        while (left<right){
-            int mid=(left+right)>>>1;
-            if (target>a[mid]){
-                left=mid+1;
-            }else if (target<a[mid]){
-                right=mid;
-            }else {
+        int left = 0, right = a.length;
+        while (left < right) {
+            int mid = (left + right) >>> 1;
+            if (target > a[mid]) {
+                left = mid + 1;
+            } else if (target < a[mid]) {
+                right = mid;
+            } else {
                 return mid;
             }
+        }
+        return -1;
+    }
+
+    /**
+     * 二分查找平衡版
+     *
+     * @param a
+     * @param target
+     * @return
+     */
+    public static int binarySearchBalance(int[] a, int target) {
+        int left = 0, right = a.length;
+        while (right - left > 1) {
+            int mid = (left + right) >>> 1;
+            if (a[mid]>target){
+                right=mid;
+            }else {
+                left=mid;
+            }
+        }
+        if (a[left]==target){
+            return left;
         }
         return -1;
     }

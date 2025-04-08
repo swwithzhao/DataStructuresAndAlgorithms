@@ -44,4 +44,22 @@ public class TestBinarySearch {
         assertEquals(-1, binarySearchAlternative(a, 15));
         assertEquals(-1, binarySearchAlternative(a, 60));
     }
+
+    @Test
+    @DisplayName("二分查找平衡版")
+    public void testBinarySearchBalance(){
+        int[] a = {7, 13, 21, 30, 38, 44, 52, 53};
+        assertEquals(0, binarySearchAlternative(a, 7));
+        assertEquals(1, binarySearchAlternative(a, 13));
+        assertEquals(2, binarySearchAlternative(a, 21));
+        assertEquals(3, binarySearchAlternative(a, 30));
+        assertEquals(4, binarySearchAlternative(a, 38));
+        assertEquals(5, binarySearchAlternative(a, 44));
+        assertEquals(6, binarySearchAlternative(a, 52));
+        assertEquals(7, binarySearchAlternative(a, 53));
+
+        assertEquals(-1, binarySearchAlternative(a, 0));
+        assertEquals(-1, binarySearchAlternative(a, 15));
+        assertEquals(-1, binarySearchAlternative(a, 60));
+    }
 }
