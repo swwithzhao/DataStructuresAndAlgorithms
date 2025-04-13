@@ -64,7 +64,7 @@ public class TestBinarySearch {
 
     @Test
     @DisplayName("测试 binarySearchLeftmost")
-    public void testBinarySearchLeftmost() {
+    public void testBinarySearchLeftmost1() {
         int[] a = {1, 2, 4, 4, 4, 5, 6, 7};
         assertEquals(0, binarySearchLeftMost1(a, 1));
         assertEquals(1, binarySearchLeftMost1(a, 2));
@@ -80,7 +80,7 @@ public class TestBinarySearch {
 
     @Test
     @DisplayName("测试 binarySearchRightmost 返回 -1")
-    public void test7() {
+    public void testBinarySearchRightmost1() {
         int[] a = {1, 2, 4, 4, 4, 5, 6, 7};
         assertEquals(0, binarySearchRightMost1(a, 1));
         assertEquals(1, binarySearchRightMost1(a, 2));
@@ -92,5 +92,36 @@ public class TestBinarySearch {
         assertEquals(-1, binarySearchRightMost1(a, 0));
         assertEquals(-1, binarySearchRightMost1(a, 3));
         assertEquals(-1, binarySearchRightMost1(a, 8));
+    }
+    @Test
+    @DisplayName("测试 binarySearchLeftmost2")
+    public void testBinarySearchLeftmost2() {
+        int[] a = {1, 2, 4, 4, 4, 7, 8};
+        assertEquals(0, binarySearchLeftMost2(a, 1));
+        assertEquals(1, binarySearchLeftMost2(a, 2));
+        assertEquals(2, binarySearchLeftMost2(a, 4));
+        assertEquals(5, binarySearchLeftMost2(a, 7));
+        assertEquals(6, binarySearchLeftMost2(a, 8));
+
+        assertEquals(0, binarySearchLeftMost2(a, 0));
+        assertEquals(2, binarySearchLeftMost2(a, 3));
+        assertEquals(5, binarySearchLeftMost2(a, 5));
+        assertEquals(7, binarySearchLeftMost2(a, 9));
+    }
+
+    @Test
+    @DisplayName("测试 binarySearchRightmost 返回 i-1")
+    public void testBinarySearchRightMost2() {
+        int[] a = {1, 2, 4, 4, 4, 5, 6, 7};
+        assertEquals(0, binarySearchRightMost2(a, 1));
+        assertEquals(1, binarySearchRightMost2(a, 2));
+        assertEquals(4, binarySearchRightMost2(a, 4));
+        assertEquals(5, binarySearchRightMost2(a, 5));
+        assertEquals(6, binarySearchRightMost2(a, 6));
+        assertEquals(7, binarySearchRightMost2(a, 7));
+
+        assertEquals(0, binarySearchRightMost2(a, 0) + 1);
+        assertEquals(2, binarySearchRightMost2(a, 3) + 1);
+        assertEquals(8, binarySearchRightMost2(a, 8) + 1);
     }
 }
