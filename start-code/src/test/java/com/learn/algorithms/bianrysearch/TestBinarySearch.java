@@ -3,8 +3,7 @@ package com.learn.algorithms.bianrysearch;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.learn.algorithms.bianrysearch.BinarySearch.binarySearchAlternative;
-import static com.learn.algorithms.bianrysearch.BinarySearch.binarySearchBasic;
+import static com.learn.algorithms.bianrysearch.BinarySearch.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestBinarySearch {
@@ -61,5 +60,37 @@ public class TestBinarySearch {
         assertEquals(-1, binarySearchAlternative(a, 0));
         assertEquals(-1, binarySearchAlternative(a, 15));
         assertEquals(-1, binarySearchAlternative(a, 60));
+    }
+
+    @Test
+    @DisplayName("测试 binarySearchLeftmost")
+    public void testBinarySearchLeftmost() {
+        int[] a = {1, 2, 4, 4, 4, 5, 6, 7};
+        assertEquals(0, binarySearchLeftMost1(a, 1));
+        assertEquals(1, binarySearchLeftMost1(a, 2));
+        assertEquals(2, binarySearchLeftMost1(a, 4));
+        assertEquals(5, binarySearchLeftMost1(a, 5));
+        assertEquals(6, binarySearchLeftMost1(a, 6));
+        assertEquals(7, binarySearchLeftMost1(a, 7));
+
+        assertEquals(-1, binarySearchLeftMost1(a, 0));
+        assertEquals(-1, binarySearchLeftMost1(a, 3));
+        assertEquals(-1, binarySearchLeftMost1(a, 8));
+    }
+
+    @Test
+    @DisplayName("测试 binarySearchRightmost 返回 -1")
+    public void test7() {
+        int[] a = {1, 2, 4, 4, 4, 5, 6, 7};
+        assertEquals(0, binarySearchRightMost1(a, 1));
+        assertEquals(1, binarySearchRightMost1(a, 2));
+        assertEquals(4, binarySearchRightMost1(a, 4));
+        assertEquals(5, binarySearchRightMost1(a, 5));
+        assertEquals(6, binarySearchRightMost1(a, 6));
+        assertEquals(7, binarySearchRightMost1(a, 7));
+
+        assertEquals(-1, binarySearchRightMost1(a, 0));
+        assertEquals(-1, binarySearchRightMost1(a, 3));
+        assertEquals(-1, binarySearchRightMost1(a, 8));
     }
 }

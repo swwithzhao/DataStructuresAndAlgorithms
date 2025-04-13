@@ -57,15 +57,63 @@ public class BinarySearch {
         int left = 0, right = a.length;
         while (right - left > 1) {
             int mid = (left + right) >>> 1;
-            if (a[mid]>target){
-                right=mid;
-            }else {
-                left=mid;
+            if (a[mid] > target) {
+                right = mid;
+            } else {
+                left = mid;
             }
         }
-        if (a[left]==target){
+        if (a[left] == target) {
             return left;
         }
         return -1;
+    }
+
+    /**
+     * 最左符合元素二分查找
+     *
+     * @param a
+     * @param target
+     * @return
+     */
+    public static int binarySearchLeftMost1(int[] a, int target) {
+        int left = 0, right = a.length - 1;
+        int leftResult = -1;
+        while (left <= right) {
+            int mid = (left + right) >>> 1;
+            if (a[mid] < target) {
+                left = mid + 1;
+            } else if (a[mid] > target) {
+                right = mid - 1;
+            } else {
+                leftResult = mid;
+                right = mid - 1;
+            }
+        }
+        return leftResult;
+    }
+
+    /**
+     * 最右符合元素二分查找
+     *
+     * @param a
+     * @param target
+     * @return
+     */
+    public static int binarySearchRightMost1(int[] a, int target) {
+        int left=0,right= a.length-1;
+        int rightResult = -1;
+        while (left<= right){
+            int mid = (left+right)>>>1;
+            if (a[mid]>target){
+                right=mid-1;
+            }else if (a[mid]<target){
+                left=mid+1;
+            }else {
+                rightResult=mid;
+                left=mid+1;
+            }
+        }
+        return rightResult;
     }
 }
