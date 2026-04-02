@@ -32,9 +32,10 @@ public class BinarySearch {
      * @return
      */
     public static int binarySearchAlternative(int[] a, int target) {
+        //初始右边位置在数组范围外
         int left = 0, right = a.length;
-        while (left < right) {
-            int mid = (left + right) >>> 1;
+        while (left < right) { //
+            int mid = (left + right) >>> 1; //防止超出正整数表达范围
             if (target > a[mid]) {
                 left = mid + 1;
             } else if (target < a[mid]) {
