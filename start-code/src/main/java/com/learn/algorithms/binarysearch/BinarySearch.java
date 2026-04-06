@@ -1,4 +1,4 @@
-package com.learn.algorithms.bianrysearch;
+package com.learn.algorithms.binarysearch;
 
 public class BinarySearch {
 
@@ -55,19 +55,21 @@ public class BinarySearch {
      * @return
      */
     public static int binarySearchBalance(int[] a, int target) {
-        int left = 0, right = a.length;
-        while (right - left > 1) {
-            int mid = (left + right) >>> 1;
-            if (a[mid] > target) {
-                right = mid;
-            } else {
-                left = mid;
-            }
-        }
-        if (a[left] == target) {
-            return left;
-        }
-        return -1;
+       int left = 0, right = a.length;
+       while (right -left >1){
+           int mid = (left+ right)>>>1;
+           if (target < a[mid]) {
+               right = mid;
+           }else {
+               left = mid;
+           }
+       }
+//       if (target == a[left]){
+//           return left;
+//       }else {
+//           return -1;
+//       }
+        return target == a[left] ? left : -1;
     }
 
     /**

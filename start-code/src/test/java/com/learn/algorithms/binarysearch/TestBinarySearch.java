@@ -1,9 +1,9 @@
-package com.learn.algorithms.bianrysearch;
+package com.learn.algorithms.binarysearch;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.learn.algorithms.bianrysearch.BinarySearch.*;
+import static com.learn.algorithms.binarysearch.BinarySearch.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestBinarySearch {
@@ -48,18 +48,18 @@ public class TestBinarySearch {
     @DisplayName("二分查找平衡版")
     public void testBinarySearchBalance(){
         int[] a = {7, 13, 21, 30, 38, 44, 52, 53};
-        assertEquals(0, binarySearchAlternative(a, 7));
-        assertEquals(1, binarySearchAlternative(a, 13));
-        assertEquals(2, binarySearchAlternative(a, 21));
-        assertEquals(3, binarySearchAlternative(a, 30));
-        assertEquals(4, binarySearchAlternative(a, 38));
-        assertEquals(5, binarySearchAlternative(a, 44));
-        assertEquals(6, binarySearchAlternative(a, 52));
-        assertEquals(7, binarySearchAlternative(a, 53));
+        assertEquals(0, binarySearchBalance(a, 7));
+        assertEquals(1, binarySearchBalance(a, 13));
+        assertEquals(2, binarySearchBalance(a, 21));
+        assertEquals(3, binarySearchBalance(a, 30));
+        assertEquals(4, binarySearchBalance(a, 38));
+        assertEquals(5, binarySearchBalance(a, 44));
+        assertEquals(6, binarySearchBalance(a, 52));
+        assertEquals(7, binarySearchBalance(a, 53));
 
-        assertEquals(-1, binarySearchAlternative(a, 0));
-        assertEquals(-1, binarySearchAlternative(a, 15));
-        assertEquals(-1, binarySearchAlternative(a, 60));
+        assertEquals(-1, binarySearchBalance(a, 0));
+        assertEquals(-1, binarySearchBalance(a, 15));
+        assertEquals(-1, binarySearchBalance(a, 60));
     }
 
     @Test
