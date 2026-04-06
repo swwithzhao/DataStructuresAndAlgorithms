@@ -55,15 +55,15 @@ public class BinarySearch {
      * @return
      */
     public static int binarySearchBalance(int[] a, int target) {
-       int left = 0, right = a.length;
-       while (right -left >1){
-           int mid = (left+ right)>>>1;
-           if (target < a[mid]) {
-               right = mid;
-           }else {
-               left = mid;
-           }
-       }
+        int left = 0, right = a.length;
+        while (right - left > 1) {
+            int mid = (left + right) >>> 1;
+            if (target < a[mid]) {
+                right = mid;
+            } else {
+                left = mid;
+            }
+        }
 //       if (target == a[left]){
 //           return left;
 //       }else {
@@ -84,13 +84,13 @@ public class BinarySearch {
         int leftMost = -1;
         while (left < right) {
             int mid = (left + right) >>> 1;
-            if (target < a[mid]){
+            if (target < a[mid]) {
                 right = mid;
-            }else if (target > a[mid]){
+            } else if (target > a[mid]) {
                 left = mid + 1;
-            }else {
+            } else {
                 leftMost = mid;
-                right = mid -1;
+                right = mid - 1;
             }
         }
         return leftMost;
@@ -108,16 +108,16 @@ public class BinarySearch {
         int rightMost = -1;
         while (left < right) {
             int mid = (left + right) >>> 1;
-            if (target < a[mid]){
+            if (target < a[mid]) {
                 right = mid;
-            } else if (target > a[mid]){
+            } else if (target > a[mid]) {
                 left = mid + 1;
             } else {
                 rightMost = mid;
                 left = mid + 1;
             }
         }
-        return  rightMost;
+        return rightMost;
     }
 
 
@@ -132,7 +132,7 @@ public class BinarySearch {
         int left = 0, right = a.length - 1;
         while (left <= right) {
             int mid = (left + right) >>> 1;
-            if (a[mid] >= target) {
+            if (target <= a[mid]) {
                 right = mid - 1;
             } else {
                 left = mid + 1;
@@ -152,7 +152,7 @@ public class BinarySearch {
         int left = 0, right = a.length - 1;
         while (left <= right) {
             int mid = (left + right) >>> 1;
-            if (a[mid] <= target) {
+            if (target >= a[mid]) {
                 left = mid + 1;
             } else {
                 right = mid - 1;
