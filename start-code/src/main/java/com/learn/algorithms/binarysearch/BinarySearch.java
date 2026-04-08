@@ -1,4 +1,4 @@
-package com.learn.algorithms.bianrysearch;
+package com.learn.algorithms.binarysearch;
 
 public class BinarySearch {
 
@@ -32,9 +32,10 @@ public class BinarySearch {
      * @return
      */
     public static int binarySearchAlternative(int[] a, int target) {
+        //初始右边位置在数组范围外
         int left = 0, right = a.length;
-        while (left < right) {
-            int mid = (left + right) >>> 1;
+        while (left < right) { //
+            int mid = (left + right) >>> 1; //防止超出正整数表达范围
             if (target > a[mid]) {
                 left = mid + 1;
             } else if (target < a[mid]) {
@@ -57,16 +58,18 @@ public class BinarySearch {
         int left = 0, right = a.length;
         while (right - left > 1) {
             int mid = (left + right) >>> 1;
-            if (a[mid] > target) {
+            if (target < a[mid]) {
                 right = mid;
             } else {
                 left = mid;
             }
         }
-        if (a[left] == target) {
-            return left;
-        }
-        return -1;
+//       if (target == a[left]){
+//           return left;
+//       }else {
+//           return -1;
+//       }
+        return target == a[left] ? left : -1;
     }
 
     /**
@@ -77,20 +80,20 @@ public class BinarySearch {
      * @return
      */
     public static int binarySearchLeftMost1(int[] a, int target) {
-        int left = 0, right = a.length - 1;
-        int leftResult = -1;
-        while (left <= right) {
+        int left = 0, right = a.length;
+        int leftMost = -1;
+        while (left < right) {
             int mid = (left + right) >>> 1;
-            if (a[mid] < target) {
+            if (target < a[mid]) {
+                right = mid;
+            } else if (target > a[mid]) {
                 left = mid + 1;
-            } else if (a[mid] > target) {
-                right = mid - 1;
             } else {
-                leftResult = mid;
+                leftMost = mid;
                 right = mid - 1;
             }
         }
-        return leftResult;
+        return leftMost;
     }
 
     /**
@@ -101,20 +104,20 @@ public class BinarySearch {
      * @return
      */
     public static int binarySearchRightMost1(int[] a, int target) {
-        int left = 0, right = a.length - 1;
-        int rightResult = -1;
-        while (left <= right) {
+        int left = 0, right = a.length;
+        int rightMost = -1;
+        while (left < right) {
             int mid = (left + right) >>> 1;
-            if (a[mid] > target) {
-                right = mid - 1;
-            } else if (a[mid] < target) {
+            if (target < a[mid]) {
+                right = mid;
+            } else if (target > a[mid]) {
                 left = mid + 1;
             } else {
-                rightResult = mid;
+                rightMost = mid;
                 left = mid + 1;
             }
         }
-        return rightResult;
+        return rightMost;
     }
 
 
@@ -129,7 +132,7 @@ public class BinarySearch {
         int left = 0, right = a.length - 1;
         while (left <= right) {
             int mid = (left + right) >>> 1;
-            if (a[mid] >= target) {
+            if (target <= a[mid]) {
                 right = mid - 1;
             } else {
                 left = mid + 1;
@@ -149,7 +152,7 @@ public class BinarySearch {
         int left = 0, right = a.length - 1;
         while (left <= right) {
             int mid = (left + right) >>> 1;
-            if (a[mid] <= target) {
+            if (target >= a[mid]) {
                 left = mid + 1;
             } else {
                 right = mid - 1;
