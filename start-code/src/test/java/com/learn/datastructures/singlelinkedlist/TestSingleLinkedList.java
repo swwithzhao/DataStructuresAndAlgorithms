@@ -1,5 +1,6 @@
-package com.learn.algorithms.LinkedList.singlelinkedlist;
+package com.learn.datastructures.singlelinkedlist;
 
+import com.learn.datastructures.linkedlist.singlelinkedlist.SingleLinkedList;
 import org.junit.jupiter.api.Test;
 
 public class TestSingleLinkedList {

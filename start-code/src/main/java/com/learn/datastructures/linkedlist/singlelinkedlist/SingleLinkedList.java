@@ -1,4 +1,4 @@
-package com.learn.algorithms.LinkedList.singlelinkedlist;
+package com.learn.datastructures.linkedlist.singlelinkedlist;
 
 import java.util.Iterator;
 import java.util.function.Consumer;
