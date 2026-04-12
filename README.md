@@ -8,3 +8,5 @@
 * ### 2.链表结构
   * #### 2.1单链表结构（无哨兵）
     com.learn.datastructures.linkedlist.singlelinkedlist.SingleLinkedList
+  * #### 2.1单链表结构（有哨兵）
+    com.learn.datastructures.linkedlist.singlelinkedlist.SingleLinkedListSentinel
