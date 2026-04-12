@@ -1,6 +1,4 @@
-package com.learn.datastructures.linkedlist.singleListSentinel;
-
-import com.learn.datastructures.linkedlist.singlelinkedlist.SingleLinkedList;
+package com.learn.datastructures.linkedlist;
 
 import java.util.Iterator;
 import java.util.function.Consumer;

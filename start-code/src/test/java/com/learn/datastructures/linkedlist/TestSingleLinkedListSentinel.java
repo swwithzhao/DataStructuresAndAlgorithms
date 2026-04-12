@@ -1,6 +1,5 @@
-package com.learn.datastructures.singlelinkedlist;
+package com.learn.datastructures.linkedlist;
 
-import com.learn.datastructures.linkedlist.singleListSentinel.SingleLinkedListSentinel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
