@@ -101,8 +101,8 @@ public class SingleLinkedList implements Iterable<Integer> {
     //根据索引位置获取值
     public int get(int index) {
         Node p = findNode(index);
-        if (p==null){
-            throw new IllegalArgumentException(String.format("Index [%d] out of bounds%n",index));
+        if (p == null) {
+            throw new IllegalArgumentException(String.format("Index [%d] out of bounds%n", index));
         }
         return p.data;
     }
@@ -110,38 +110,38 @@ public class SingleLinkedList implements Iterable<Integer> {
 
     //指定索引位置插入
     public void insert(int index, int data) {
-        if (index == 0){
+        if (index == 0) {
             addFirst(data);
             return;
         }
-        Node preNode = findNode(index-1);
-        if (preNode == null){
-            throw new IllegalArgumentException(String.format("Index [%d] out of bounds%n",index));
+        Node preNode = findNode(index - 1);
+        if (preNode == null) {
+            throw new IllegalArgumentException(String.format("Index [%d] out of bounds%n", index));
         }
         preNode.next = new Node(data, preNode.next);
     }
 
     //删除首位节点
-    public  void  removeFirst() {
+    public void removeFirst() {
         if (head == null) {
-            throw new IllegalArgumentException(String.format("Index [%d] out of bounds%n",0));
+            throw new IllegalArgumentException(String.format("Index [%d] out of bounds%n", 0));
         }
         head = head.next;
     }
 
     //指定索引位置删除
     public void removeByIndex(int index) {
-        if (index == 0){
+        if (index == 0) {
             removeFirst();
             return;
         }
-        Node preNode = findNode(index-1);
-        if (preNode == null){
-            throw new IllegalArgumentException(String.format("Index [%d] out of bounds%n",index));
+        Node preNode = findNode(index - 1);
+        if (preNode == null) {
+            throw new IllegalArgumentException(String.format("Index [%d] out of bounds%n", index));
         }
         Node delNode = preNode.next;
-        if (delNode == null){
-            throw new IllegalArgumentException(String.format("Index [%d] out of bounds%n",index));
+        if (delNode == null) {
+            throw new IllegalArgumentException(String.format("Index [%d] out of bounds%n", index));
         }
         preNode.next = delNode.next;
     }

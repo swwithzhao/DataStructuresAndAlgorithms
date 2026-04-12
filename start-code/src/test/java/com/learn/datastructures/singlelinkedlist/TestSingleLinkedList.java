@@ -30,7 +30,7 @@ public class TestSingleLinkedList {
     }
 
     @Test
-    public void testAddLast(){
+    public void testAddLast() {
         SingleLinkedList list = new SingleLinkedList();
         list.addLast(1);
         list.addLast(2);
@@ -42,7 +42,7 @@ public class TestSingleLinkedList {
     }
 
     @Test
-    public void testGetParam(){
+    public void testGetParam() {
         SingleLinkedList list = new SingleLinkedList();
         list.addLast(1);
         list.addLast(2);
@@ -54,7 +54,7 @@ public class TestSingleLinkedList {
     }
 
     @Test
-    public void testInsert(){
+    public void testInsert() {
         SingleLinkedList list = new SingleLinkedList();
         list.addLast(1);
         list.addLast(2);
@@ -62,12 +62,12 @@ public class TestSingleLinkedList {
         list.addLast(4);
         list.addLast(5);
 
-        list.insert(0,6);
+        list.insert(0, 6);
         list.forEach(System.out::println);
     }
 
     @Test
-    public void testRemove(){
+    public void testRemove() {
         SingleLinkedList list = new SingleLinkedList();
         list.addLast(1);
         list.addLast(2);
