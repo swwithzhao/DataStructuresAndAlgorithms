@@ -76,7 +76,21 @@ public class TestSingleLinkedList {
 //        list.removeFirst();
         list.removeByIndex(4);
         list.forEach(System.out::println);
+    }
 
-
+    @Test
+    public void testLoopRecursion() {
+        SingleLinkedList list = new SingleLinkedList();
+        list.addLast(1);
+        list.addLast(2);
+        list.addLast(3);
+        list.addLast(4);
+        list.addLast(5);
+        list.loopRecursion();
+        list.loopRecursion(before -> {
+            System.out.println("before:" + before);
+        }, after -> {
+            System.out.println("after:" + after);
+        });
     }
 }

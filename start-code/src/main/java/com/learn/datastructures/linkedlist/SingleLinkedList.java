@@ -43,6 +43,35 @@ public class SingleLinkedList implements Iterable<Integer> {
         }
     }
 
+    //递归遍历链表
+    public void loopRecursion() {
+        recursionLoop(head);
+    }
+    private void recursionLoop(Node node) {
+        if (node == null) {
+            return;
+        }
+        System.out.println(node.data);
+        recursionLoop(node.next);
+    }
+
+
+
+    public void loopRecursion(Consumer<Integer> before, Consumer<Integer> after) {
+        recursionLoop(head,before,after);
+    }
+
+    private void recursionLoop(Node node, Consumer<Integer> before, Consumer<Integer> after) {
+        if (node == null) {
+            return;
+        }
+        before.accept(node.data);
+        recursionLoop(node.next,before,after);
+        after.accept(node.data);
+    }
+
+
+
     /**
      * 遍历链表iterator迭代器
      *
