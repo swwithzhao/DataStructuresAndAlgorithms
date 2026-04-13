@@ -12,3 +12,5 @@
     com.learn.datastructures.linkedlist.SingleLinkedListSentinel
   * #### 2.3双向链表结构（有哨兵）
     com.learn.datastructures.linkedlist.DoublyLinkedListSentinel
+  * #### 2.4双向循环链表
+    com.learn.datastructures.circular.DoublyCircularLinkedListSentinel
