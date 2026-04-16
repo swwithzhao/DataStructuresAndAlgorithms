@@ -62,7 +62,7 @@ public class PascalTriangle {
     //优化使用一维数组
 
     static void printTriangle2(int num) {
-        int[] triangle = new int[num + 1];
+        int[] triangle = new int[num];
         for (int i = 0; i < num; i++) {
             calNum2(triangle, i);
             for (int j = 0; j <= i; j++) {
